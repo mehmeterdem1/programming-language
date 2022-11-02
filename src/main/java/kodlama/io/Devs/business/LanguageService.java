@@ -12,11 +12,11 @@ public interface LanguageService {
 
     LanguageEntity getById(Long id);
 
-    void add(LanguageEntity language);
+    void save(LanguageEntity language);
 
     void delete(LanguageEntity language, Long id);
 
-    void update(LanguageEntity language, Long id);
+    LanguageEntity update(LanguageEntity language, Long id);
 
 
 }

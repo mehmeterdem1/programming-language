@@ -31,8 +31,8 @@ public class LanguageManager implements LanguageService {
     }
 
     @Override
-    public void add(LanguageEntity language) {
-        languageRepository.add(language);
+    public void save(LanguageEntity language) {
+        languageRepository.save(language);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class LanguageManager implements LanguageService {
     }
 
     @Override
-    public void update(LanguageEntity language, Long id) {
-        languageRepository.update(language, id);
+    public LanguageEntity update(LanguageEntity language, Long id) {
+        return languageRepository.update(language, id);
     }
 }

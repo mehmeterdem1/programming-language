@@ -30,17 +30,17 @@ public class LanguageController {
         return languageService.getById(id);
     }
 
-    @PostMapping
+    @PostMapping("add")
     public void addLanguage(@RequestBody LanguageEntity language) {
-        languageService.add(language);
+        languageService.save(language);
     }
 
     @PutMapping("update/{id}")
-    public void updateLanguage(@RequestBody LanguageEntity language, @PathVariable Long id) {
-        languageService.update(language, id);
+    public LanguageEntity updateLanguage(@RequestBody LanguageEntity language, @PathVariable Long id) {
+        return languageService.update(language, id);
     }
 
-    @PutMapping("delete/{id}")
+    @DeleteMapping("delete/{id}")
     public void deleteLanguage(@RequestBody LanguageEntity language, @PathVariable Long id) {
         languageService.delete(language, id);
     }
