@@ -35,7 +35,7 @@ public class LanguageController {
         languageService.add(language);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("update/{id}")
     public void updateLanguage(@RequestBody LanguageEntity language, @PathVariable Long id) {
         languageService.update(language, id);
     }
