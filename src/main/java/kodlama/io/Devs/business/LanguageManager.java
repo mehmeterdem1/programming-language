@@ -36,8 +36,8 @@ public class LanguageManager implements LanguageService {
     }
 
     @Override
-    public void delete(Long id) {
-        languageRepository.delete(id);
+    public void delete(LanguageEntity language, Long id) {
+        languageRepository.delete(language, id);
     }
 
     @Override

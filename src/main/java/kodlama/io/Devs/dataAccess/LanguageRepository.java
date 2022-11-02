@@ -11,7 +11,7 @@ public interface LanguageRepository {
 
     void add(LanguageEntity language);
 
-    void delete(Long id);
+    void delete(LanguageEntity language, Long id);
 
     void update(LanguageEntity language, Long id);
 }

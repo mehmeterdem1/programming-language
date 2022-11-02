@@ -39,4 +39,9 @@ public class LanguageController {
     public void updateLanguage(@RequestBody LanguageEntity language, @PathVariable Long id) {
         languageService.update(language, id);
     }
+
+    @PutMapping("delete/{id}")
+    public void deleteLanguage(@RequestBody LanguageEntity language, @PathVariable Long id) {
+        languageService.delete(language, id);
+    }
 }
