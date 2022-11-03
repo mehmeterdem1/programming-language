@@ -1,8 +1,10 @@
 package kodlama.io.Devs.web.controller;
 
 import kodlama.io.Devs.business.LanguageService;
+import kodlama.io.Devs.business.requests.CreateLanguageRequest;
+import kodlama.io.Devs.business.responses.GetAllLanguagesResponse;
 import kodlama.io.Devs.dataAccess.LanguageRepository;
-import kodlama.io.Devs.entity.LanguageEntity;
+import kodlama.io.Devs.entity.Language;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,27 +23,13 @@ public class LanguageController {
     }
 
     @GetMapping("all")
-    public List<LanguageEntity> getAll() {
+    public List<GetAllLanguagesResponse> getAll() {
         return languageService.getAll();
     }
 
-    @GetMapping("{id}")
-    public LanguageEntity getById(@PathVariable() Long id) {
-        return languageService.getById(id);
-    }
-
     @PostMapping("add")
-    public void addLanguage(@RequestBody LanguageEntity language) {
-        languageService.save(language);
+    public void add(CreateLanguageRequest createLanguageRequest) {
+        languageService.add(createLanguageRequest);
     }
 
-    @PutMapping("update/{id}")
-    public LanguageEntity updateLanguage(@RequestBody LanguageEntity language, @PathVariable Long id) {
-        return languageService.update(language, id);
-    }
-
-    @DeleteMapping("delete/{id}")
-    public void deleteLanguage(@RequestBody LanguageEntity language, @PathVariable Long id) {
-        languageService.delete(language, id);
-    }
 }

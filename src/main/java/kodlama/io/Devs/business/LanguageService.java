@@ -1,6 +1,7 @@
 package kodlama.io.Devs.business;
 
-import kodlama.io.Devs.entity.LanguageEntity;
+import kodlama.io.Devs.business.requests.CreateLanguageRequest;
+import kodlama.io.Devs.business.responses.GetAllLanguagesResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,15 +9,8 @@ import java.util.List;
 @Service
 public interface LanguageService {
 
-    List<LanguageEntity> getAll();
+    List<GetAllLanguagesResponse> getAll();
 
-    LanguageEntity getById(Long id);
-
-    void save(LanguageEntity language);
-
-    void delete(LanguageEntity language, Long id);
-
-    LanguageEntity update(LanguageEntity language, Long id);
-
+    void add(CreateLanguageRequest createLanguageRequest);
 
 }

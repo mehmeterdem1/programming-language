@@ -1,17 +1,11 @@
 package kodlama.io.Devs.dataAccess;
 
-import kodlama.io.Devs.entity.LanguageEntity;
+import kodlama.io.Devs.entity.Language;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import java.util.List;
 
-public interface LanguageRepository {
-    List<LanguageEntity> getAll();
+public interface LanguageRepository extends JpaRepository<Language, Long> {
 
-    LanguageEntity getById(Long id);
-
-    void save(LanguageEntity language);
-
-    void delete(LanguageEntity language, Long id);
-
-    LanguageEntity update(LanguageEntity language, Long id);
 }
